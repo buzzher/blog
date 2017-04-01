@@ -1,0 +1,15 @@
+{
+  "name": "bar-site",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.4.0",
+    "gulp-watch": "^4.3.11",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^3.1.0"
+  }
+}
