@@ -1,0 +1,13 @@
+.location-section {
+	background-color: pink;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	&__list {
+		font-size: 1rem;
+
+		@media atSmall {
+			font-size: 3rem;
+		}
+	}
+}

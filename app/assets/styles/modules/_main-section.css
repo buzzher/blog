@@ -1,0 +1,46 @@
+.main-section {
+	position: relative;
+
+	&__text-content {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+		width: 100%;
+		text-align: center;
+
+	}
+
+	&__title {
+		color: $mainBlue;
+		font-size: 2.3rem;
+		margin: 0px;
+
+		@mixin atSmall {
+			font-size: 3.7rem;
+			}
+
+		@mixin atMedium {
+			font-size: 6rem;
+			}
+	}
+
+	&__subtitle {
+		color: $mainOrange;
+		font-size: 1rem;
+		font-weight: 300;
+		margin: 0px;
+		padding-top: .5rem;
+
+		@mixin atSmall {
+			font-size: 2rem;
+			}
+
+		@mixin atMedium {
+			font-size: 2.8rem;
+			max-width: 30rem;
+			margin-left: auto;
+			margin-right: auto;
+			}
+	}
+}

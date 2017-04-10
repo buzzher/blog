@@ -9,40 +9,89 @@
   <meta name="description" content="...">
 
   <link rel='stylesheet' href='temp/styles/styles.css'>
-  
-</head>
+ </head>
 
 <body>
   <header class="">
     <nav class="">
       <ul class="">
         <li class=""><a href='#'>Home</a></li>
+        <li class=""><a href='#'>Location</a></li>
         <li class=""><a href='#'>About</a></li>
-        <li class=""><a href='#'>Prices</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="">
-    Hello HTML Hello
-
-  <div class="">
-    <p class="">
-     sg[fsgasfgsafgassgasasdasdgsadgfsadgsagasasfgsafgasdfsadfsgsdfs
-    </p>
-    <p class="">
-     sg[fsgasfgsafgassgasasdasdgsadgfsadgsagasasfgsafgasdfsadfsgsdfs
-    </p>
-  </div>
-  </div>
-
-  <div class="">
-    Hello HTML Hello
-  </div>
+  <div class="main-section">
+    <picture>
+      <source srcset='assets/images/drinks--large.jpg' media="(min-width: 1380px)">
+      <source srcset='assets/images/drinks--medium.jpg' media="(min-width: 990px)">
+      <source srcset='assets/images/drinks--small.jpg' media="(min-width: 640px)">
+      <img src='assets/images/drinks--smaller.jpg'  alt="image of drinks">
+    </picture>
   
- <div class="">
-    Hello HTML Hello
-  </div>
+    
+    <div class="main-section__text-content">
+      <div class="wrapper">
+        <h1 class="main-section__title">Bars Search</h1>
+        <h3 class="main-section__subtitle">Find The Best Bars in Your Area</h3>
+        <p><a href='#' class="btn btn--large">Search</a></p>
+        </div> <!-- /wrapper -->
+    </div> <!-- /text-content -->
+  </div> <!-- /main-loction -->
+
+  <div class="location-section">
+    <div class="wrapper">
+      <div class="location-section__list">
+         please choose a location
+         <from action="#" class='location-section__list--drop-down'>
+          <select name="cities">
+            <option value="New York City">New York City</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Baltimore">Baltimore</option>
+            <option value="Las Vegas">Las Vegas</option>
+          </select>
+        </from>
+      </div><!-- /list -->
+    </div> <!-- /wrapper -->
+  </div> <!-- /location-section -->
+
+  <div class="city-section">
+    <div class="wrapper">
+      <h1 class="location-section__city">
+         city name, background city
+      </h1>
+      <div class=""></div>
+      drop down arrow/list to the right
+    </div> <!-- /wrapper -->
+  </div> <!-- /city-section -->
+  
+  <div class="about">
+    <div class="wrapper">
+      <div class="about__title">
+        <h3 class="">
+         About
+        </h3>
+      </div> <!-- /about-title -->
+      <div class="about__description">
+        <div class="about__description--right">
+          <p class="">
+           about description to the right 1/2
+          </p>
+        </div> <!-- /about__description- -right -->
+      <div class="about__description--left">
+        <p class="">
+         about description to the left 1/2
+        </p>
+      </div> <!-- about__description- -left -->
+      </div> <!-- about-description -->
+    </div> <!-- /wrapper -->
+    
+  </div> <!-- /about -->
+
+  <footer class="footer">
+    All the right reserve 2015
+  </footer>
 
 </body>
 </html>
