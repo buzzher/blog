@@ -1,5 +1,5 @@
 .btn {
-	background-color: $mainOrange;
+	background-color: $mainRed;
 	text-decoration: none;
 	font-size: 1rem;
 	color: #fff;
@@ -13,6 +13,14 @@
 		@mixin atSmall {
 			font-size: 1.8rem;
 			padding: 1.2rem 1.8rem;
+		}
+	}
+
+	&--top-margin {
+		margin-top: 1rem;
+
+		@mixin atSmall {
+			margin-top: 0rem;
 		}
 	}
 	

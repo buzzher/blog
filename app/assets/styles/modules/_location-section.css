@@ -1,13 +1,25 @@
 .location-section {
-	background-color: pink;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+	text-align: center;
+
+	@mixin atSmall {
+		padding-top: 0rem;
+		padding-bottom: 0rem;
+		}
+
+	&__title {
+		font-size: 1rem;
+		font-weight: 300;
+		
+		@mixin atSmall {
+			font-size: 3rem;
+			}
+		}
 
 	&__list {
-		font-size: 1rem;
-
-		@media atSmall {
-			font-size: 3rem;
+		padding-top: .5rem;
 		}
-	}
+
+	
 }
