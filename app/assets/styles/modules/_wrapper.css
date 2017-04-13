@@ -10,9 +10,13 @@
 	}
 
 	@mixin atMedium {
-
 		padding-left: 18px;
 		padding-right: 18px;
+	}
+
+	&__medium {
+		max-width: 975px;
+		
 	}
 
 	&--width-small-screen {
