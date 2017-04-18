@@ -870,3 +870,25 @@ a {
   padding-right: 15px;
   padding-left: 15px;
 }
+
+.site-footer {
+	color: #002633;
+	background-color: #ffa852;
+	text-align: center;
+	padding: .5rem 0;
+}
+
+.site-footer__text {
+  display: block;
+  margin-bottom: .5rem;
+  font-size: .8rem;
+}
+
+@media(min-width: 800px) {
+
+  .site-footer__text {
+    display: inline;
+    margin-right: 1.5rem;
+    font-size: 1rem;
+  }
+}
