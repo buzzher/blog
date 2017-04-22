@@ -12,14 +12,28 @@
  </head>
 
 <body>
-  <header class="">
-    <nav class="">
-      <ul class="">
-        <li class=""><a href='#'>Home</a></li>
-        <li class=""><a href='#'>Location</a></li>
-        <li class=""><a href='#'>About</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="wrapper">
+     <div class="site-header__menu-icon">
+       <!-- <div class="site-header__menu-icon__top"></div> -->
+       <div class="site-header__menu-icon__middle"></div>
+       <!-- <div class="site-header__menu-icon__bottom"></div> -->
+     </div>
+     <div class="site-header__btn-container">
+          <a href='#' class="btn">Search</a>
+        </div>
+      <div class="site-header__menu-content">
+        
+        <nav class="primary-nav primary-nav--pull-right">
+          <ul class="">
+            <li class=""><a href='#'>Home</a></li>
+            <li class=""><a href='#'>Location</a></li>
+            <li class=""><a href='#'>About</a></li>
+          </ul>
+        </nav>
+      </div>
+      
+    </div> <!-- /wrapper -->
   </header>
 
   <div class="main-section">
@@ -34,7 +48,10 @@
       <div class="wrapper">
         <h1 class="main-section__title">Bars Search</h1>
         <h3 class="main-section__subtitle">Find The Best Bars in Your Area</h3>
-        <p><a href='#' class="btn btn--large btn--top-margin">Search</a></p>
+        <div class="main-section__btn">
+          <p><a href='#' class="btn btn--large btn--top-margin">Search</a></p>
+        </div>
+        
         </div> <!-- /wrapper -->
     </div> <!-- /text-content -->
   </div> <!-- /main-loction -->
