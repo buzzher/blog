@@ -26,9 +26,10 @@
         
         <nav class="primary-nav primary-nav--pull-right">
           <ul class="">
-            <li class=""><a href='#'>Home</a></li>
-            <li class=""><a href='#'>Location</a></li>
-            <li class=""><a href='#'>About</a></li>
+            <li class=""><a href='#home' id='home-link'>Home</a></li>
+            <li class=""><a href='#location' id='location-link'>Location</a></li>
+            <li class=""><a href='#about' id='about-link'>About</a></li>
+            <li class=""><a href='#testimonials' id='testimonials-link'>Testimonials</a></li>
           </ul>
         </nav>
       </div>
@@ -36,7 +37,7 @@
     </div> <!-- /wrapper -->
   </header>
 
-  <div class="main-section">
+  <div class="main-section" id='home'>
     <picture>
       <source srcset='assets/images/drinks--large.jpg' media="(min-width: 1380px)">
       <source srcset='assets/images/drinks--medium.jpg' media="(min-width: 990px)">
@@ -56,25 +57,25 @@
     </div> <!-- /text-content -->
   </div> <!-- /main-loction -->
 
-  <div id='LocationSection' class="page-section page-section__orange">
+  <div id='location' class="page-section page-section__orange" data-matching-link='#location-link'>
     <div class="location-section">
       <div class="wrapper">
         <p class='location-section__title'>Please choose a location</p>
         <div class="location-section__list">
-          <from action="#" class=''>
+          <form action="#" class=''>
             <select name="cities">
               <option value="New York City">New York City</option>
               <option value="Chicago">Chicago</option>
               <option value="Baltimore">Baltimore</option>
               <option value="Las Vegas">Las Vegas</option>
             </select>
-          </from>
+          </form>
         </div> <!-- /location-section__list -->
       </div> <!-- /wrapper -->
     </div><!-- /list -->
   </div> <!-- /page-section -->
 
-  <div id='CitySection' class="page-section page-section--medium">
+  <div id='CitySection' class="page-section page-section--medium" data-matching-link='#location-link'>
     <div class="wrapper">
       <div class="row row--gutters">
         <div class="row__medium-4">
@@ -97,19 +98,22 @@
       </div> <!-- /row -->
     </div> <!-- /wrapper -->
   </div> <!-- /page-section -->
-  
-  <div class="page-section page-section__purple page-section--b-padding">
-    <div class="wrapper wrapper--width-small-screen wrapper__medium">
-      <h3 class="headline headline__orange">About</h3>
-      <div class="generic-content-container generic-content-container--black">
-        <p>We are a company who provide you with <a href='#'><strong>the best bars or lounges</strong></a> in a choosen ares.</p>
-        <p>We commit to the best reserch availble on line and getting the best top rated bars or lounges.</p>
-        <p>We spend hours of reserch with our trusted partners to bring you the best resault so no need to google any more, we do the hard job for <strong>you.</strong></p>
-      </div> <!-- /generic-content-container -->
-     </div> <!-- /wrapper -->
-    </div> <!-- /page-section -->
 
-  <div class="page-section">
+  <div class="" id='about' >
+    <div class="page-section page-section__purple page-section--b-padding" data-matching-link='#about-link'>
+      <div class="wrapper wrapper--width-small-screen wrapper__medium">
+        <h3 class="headline headline__orange">About</h3>
+        <div class="generic-content-container generic-content-container--black">
+          <p>We are a company who provide you with <a href='#'><strong>the best bars or lounges</strong></a> in a choosen ares.</p>
+          <p>We commit to the best reserch availble on line and getting the best top rated bars or lounges.</p>
+          <p>We spend hours of reserch with our trusted partners to bring you the best resault so no need to google any more, we do the hard job for <strong>you.</strong></p>
+        </div> <!-- /generic-content-container -->
+       </div> <!-- /wrapper -->
+    </div> <!-- /page-section -->
+  </div> <!-- /about -->
+  
+<div class="" id='testimonials'>
+  <div class="page-section" data-matching-link='#testimonials-link'>
     <div class="wrapper">
       <div class="row row--gutters row--box-same-height generic-content-container">
       <div class="headline headline__testimonials">Testimonilas</div>
@@ -157,11 +161,15 @@
       </div> <!-- /row -->
     </div> <!-- /wrapper -->
   </div> <!-- /page-section -->
-
-
-  <footer class="site-footer">
+</div> <!-- /testimonials -->
+  
+<footer class="site-footer">
     <p><span class="site-footer__text">Copyright &copy 2016 All the rights reserved</span><a href='#' class='btn'>Search<a></p>
   </footer>
+
+  <div class="modal">
+    Please sucsribe
+  </div>
 
 <script src='/temp/scripts/App.js'></script>
 
