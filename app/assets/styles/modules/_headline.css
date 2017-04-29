@@ -25,6 +25,12 @@
 
 	&__orange {
 		color: $mainOrange;
+		font-weight: 300;
+	}
+
+	&__blue {
+		margin-top: 100px;
+		color: $mainBlue;
 		font-weight: 400;
 	}
 

@@ -16,8 +16,9 @@
 
 	&__medium {
 		max-width: 975px;
-		
-	}
+		}
+
+	
 
 	&--width-small-screen {
 		padding-left: 10px;
