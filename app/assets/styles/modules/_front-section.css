@@ -1,0 +1,45 @@
+.front-section {
+
+	&__headline {
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 10%;
+			left: 10px;
+			text-align: center;
+			font-weight: 300;
+
+			
+			@mixin atMedium {
+				position: absolute;
+				top: 50%;
+				left: 140px;
+				transform: translateY(50%);
+				font-size: .4rem;
+				transition: all .8s ease-out;
+				font-weight: 800;
+				
+				&:hover {
+					width: 800px;
+					font-size: 2.8rem;
+					top: 50%;
+					transition: all .8s ease-out;
+					cursor: pointer;
+
+				}
+			}
+
+		}
+	
+	&__position {
+
+		@mixin atMedium {
+			
+			
+		}
+
+	} /*position*/
+
+	
+	
+}

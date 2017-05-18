@@ -1,0 +1,87 @@
+.section {
+	text-align: center;
+	padding: 20px 20px;
+	height: 180px;
+	border-bottom: 1px solid lightgray;
+	
+
+	@mixin atMedium {
+		text-align: center;
+		border-bottom: none;
+		padding: 20px 20px;
+		height: 280px;
+		box-shadow: 0px 1px 5px #888888;
+		
+	}
+
+	&__title {
+		font-size: 2.1rem;
+		padding-bottom: 10px;
+		font-weight: 300;
+	}
+
+	&__subtitle {
+		font-size: 1.2rem;
+		line-height: 1.1;
+		padding-bottom: 5px;
+		font-weight: 300;
+
+		@mixin atMedium {
+			font-size: 1.5rem;
+			line-height: 1.2;
+			padding-bottom: 20px;
+			font-weight: 300;
+		}
+	}
+
+	&__description {
+		display: none;
+
+		@mixin atSmall {
+			
+		}
+		
+		@mixin atMedium {
+			font-size: 1.2rem;
+			line-height: 1.5;
+			width: 300px;
+			display: block;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+
+	&__about {
+		background-color: rgba($mainBlue, .1);
+
+		&:hover {
+			background-color: rgba($mainBlue, .15);
+		}
+		
+	}
+
+	&__blog {
+		background-color: rgba(#33ffcc, .1);
+
+		&:hover {
+			background-color: rgba(#33ffcc, .15);
+		}
+		
+	}
+
+	&__the-future {
+		background-color: rgba($mainOrange, .1);
+
+		&:hover {
+			background-color: rgba($mainOrange, .15);
+		}
+	}
+
+	&__contact {
+			background-color: rgba($mainPurple, .1);
+
+			&:hover {
+			background-color: rgba($mainPurple, .2);
+		}
+	}
+}
