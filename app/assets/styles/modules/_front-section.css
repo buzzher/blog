@@ -16,15 +16,16 @@
 				left: 140px;
 				transform: translateY(50%);
 				font-size: .4rem;
-				transition: all .8s ease-out;
+				transition: all 10s ease-out;
 				font-weight: 800;
 				
 				&:hover {
-					width: 800px;
+					width: 1500px;
 					font-size: 2.8rem;
 					top: 50%;
-					transition: all .8s ease-out;
+					transition: all 8s ease-out;
 					cursor: pointer;
+					opacity: 0;
 
 				}
 			}

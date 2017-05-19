@@ -4,10 +4,6 @@
 
 	@mixin atSmall {
 
-		&__medium--6 {
-			float: left;
-			width: 50%;
-		}
 	}
 
 
@@ -16,6 +12,16 @@
 		&__medium--6 {
 			float: left;
 			width: 50%;
+		}
+
+		&__medium--4 {
+			float: left;
+			width: 33.33%;
+		}
+
+		&__medium--8 {
+			float: left;
+			width: 66.66%;
 		}
 	}
 

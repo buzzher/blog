@@ -64,7 +64,7 @@
 		background-color: rgba(#33ffcc, .1);
 
 		&:hover {
-			background-color: rgba(#33ffcc, .15);
+			background-color: rgba(#33ffcc, .21);
 		}
 		
 	}
@@ -73,7 +73,7 @@
 		background-color: rgba($mainOrange, .1);
 
 		&:hover {
-			background-color: rgba($mainOrange, .15);
+			background-color: rgba($mainOrange, .21);
 		}
 	}
 

@@ -1,0 +1,101 @@
+.container {
+	background-color: rgba($mainBlue, .1);
+	padding: 30px 20px 30px 20px;
+
+
+
+	img {
+		width: 50%;
+		margin-top: 20px;
+		display: block;
+		border-radius: 10px;
+		margin-right: auto;
+		margin-left: auto;
+		opacity: 1;
+		transition: opacity .3s ease-out;
+
+
+		@mixin atSmall {
+			width: 50%;
+			margin-top: 20px;
+			display: block;
+			border-radius: 10px;
+			margin-right: auto;
+			margin-left: auto;
+			border-bottom: 1px solid $mainGray;
+		}
+	}
+
+	&__img-underline {
+			border-bottom: 1px solid $mainGray;
+			padding-bottom: 5%;
+
+		@mixin atMedium {
+			border-bottom: none;
+		}
+	}
+
+	&__title {
+
+		h1 {
+			font-family: 'Barrio', cursive;
+			color: #adad85;
+			text-align: center;
+			text-shadow: 1px 1px #8a8a5c;
+			font-weight: 300;
+			border-bottom: 1px solid $mainGray;
+			background-color: rgba($mainGray, .1);
+
+			@mixin atSmall {
+				font-weight: 300;
+				border-bottom: 1px solid $mainGray;
+				border-right: 1px solid $mainGray;
+			}
+
+			@mixin atMedium {
+				width: 230px;
+				margin-left: auto;
+				margin-right: auto;
+				padding-top: 40px;
+				padding-bottom: 40px;
+				font-weight: 300;
+				border-bottom: 1px solid $mainGray;
+				border-right: 1px solid $mainGray;
+			}
+		}
+	}
+
+	&__story {
+		font-size: 1.2rem;
+		letter-spacing: .03;
+		font-weight: 300;
+		line-height: 1.5;
+		text-align: center;
+		width: 100%;
+		margin-right: auto;
+		margin-left: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		&--description {
+			border-bottom: 1px solid $mainGray;
+			padding: 28px 0;
+		}
+
+		
+
+		@mixin atMedium {
+			font-size: 1.2rem;
+			letter-spacing: .03;
+			font-weight: 300;
+			line-height: 1.8;
+			text-align: center;
+			width: 500px;
+			margin-right: auto;
+			margin-left: auto;
+			padding-top: 50px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid $mainGray;
+		}
+	}
+}
