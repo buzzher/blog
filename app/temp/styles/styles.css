@@ -804,8 +804,25 @@ a {
 }
 
 .primary-nav {
-	float: right;
+
+	padding-top: 10px;
+	display: none;
 }
+
+@media(min-width: 800px) {
+
+.primary-nav {
+		padding-top: 0;
+		display: block
+}
+	}
+
+@media(min-width: 800px) {
+
+.primary-nav--pull-right {
+			float: right
+	}
+	}
 
 .primary-nav ul {
 		padding: 0;
@@ -820,10 +837,28 @@ a {
 	}
 
 .primary-nav li {
-		float: left;
-		margin-right: 20px;
-		display: block;
-		
+		margin-right: 10px;
+		display: inline-block;
+	}
+
+@media(min-width: 800px) {
+
+.primary-nav li {
+			padding-right: 20px;
+			float: left;
+			display: block
+	}
+	}
+
+.primary-nav li:last-child {
+		padding-right: 0;
+	}
+
+@media(min-width: 800px) {
+
+.primary-nav li:last-child {
+			padding-right: 20px
+	}
 	}
 
 .primary-nav a {
@@ -831,7 +866,6 @@ a {
 		margin: 0;
 		display: block;
 		font-size: 1.2rem;
-		text-align: center;
 		-webkit-transition: all .3s ease-out;
 		transition: all .3s ease-out;
 		-webkit-transform: scale(1);
@@ -842,7 +876,83 @@ a {
 			-webkit-transition: all .3s ease-out;
 			transition: all .3s ease-out;
 			color: rgba(136,136,136, .5);
-			-webkit-transform: scale(1.1);
-			        transform: scale(1.1);
-			
+			-webkit-transform: scale(1.2);
+			        transform: scale(1.2);
+
+		}
+
+.site-header {
+
+	width: 100%;
+}
+
+.site-header::after {
+		content: '';
+		clear: both;
+		display: table;
+	}
+
+@media(min-width: 800px) {
+
+.site-header {
+		position: fixed
+}
+	}
+
+@media(min-width: 800px) {
+
+.site-header__menu-content {
+			padding-right: 17%;
+			padding-top: 10px
+	}
+	}
+
+.site-header__menu-icon {
+
+		width: 20px;
+		height: 19px;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 10;
+	}
+
+@media(min-width: 800px) {
+
+.site-header__menu-icon {
+			display: none
+	}
+	}
+
+.site-header__menu-icon::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: rgba(38,26,13, .5);
+			border-radius: 40%;
+		}
+
+.site-header__menu-icon__middle {
+			position: absolute;
+			top: 8px;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: rgba(38,26,13, .5);
+			border-radius: 40%;
+
+		}
+
+.site-header__menu-icon::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: rgba(38,26,13, .5);
+			border-radius: 40%;
 		}

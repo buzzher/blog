@@ -1,0 +1,65 @@
+.site-header {
+
+	width: 100%;
+	@mixin clearfix;
+
+
+	@mixin atMedium {
+		position: fixed;
+	}
+
+	&__menu-content {
+
+		@mixin atMedium {
+			padding-right: 17%;
+			padding-top: 10px;
+		}
+	}
+
+	&__menu-icon {
+
+		width: 20px;
+		height: 19px;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 10;
+		
+		@mixin atMedium {
+			display: none;
+		}
+		
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: rgba(#261a0d, .5);
+			border-radius: 40%;
+		}
+
+		&__middle {
+			position: absolute;
+			top: 8px;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: rgba(#261a0d, .5);
+			border-radius: 40%;
+
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: rgba(#261a0d, .5);
+			border-radius: 40%;
+		}
+	}
+}
