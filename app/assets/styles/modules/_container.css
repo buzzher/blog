@@ -1,7 +1,12 @@
 .container {
 	background-color: rgba($mainBlue, .1);
 	padding: 30px 20px 30px 20px;
-
+	
+	hr {
+	    border: 0;
+	    height: 1px;
+	    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
 
 
 	img {
@@ -78,10 +83,8 @@
 		padding-bottom: 20px;
 
 		&--description {
-			border-bottom: 1px solid $mainGray;
 			padding: 28px 0;
 		}
-
 		
 
 		@mixin atMedium {
@@ -95,7 +98,7 @@
 			margin-left: auto;
 			padding-top: 50px;
 			padding-bottom: 20px;
-			border-bottom: 1px solid $mainGray;
+			
 		}
 	}
 }

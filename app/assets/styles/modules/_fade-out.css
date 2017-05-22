@@ -1,0 +1,19 @@
+.fade-out {
+	opacity: 1;
+	transition: all 10s ease-out;
+
+	&--is-active {
+		font-size: .1rem;
+		opacity: 0;
+	}
+
+	&__navbar {
+		opacity: 1;
+		transition: all 1s ease-out;
+
+		&--is-active {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}

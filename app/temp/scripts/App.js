@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10347,37 +10347,37 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var MobileMenu = function () {
-	function MobileMenu() {
-		_classCallCheck(this, MobileMenu);
+var FadeOut = function () {
+	//target
+	function FadeOut() {
+		_classCallCheck(this, FadeOut);
 
-		this.siteHeader = (0, _jquery2.default)('.site-header');
-		this.menuIcon = (0, _jquery2.default)('.site-header__menu-icon');
-		this.menuContent = (0, _jquery2.default)('.site-header__menu-content');
-		this.events();
+		this.itemsToReveal = (0, _jquery2.default)('.front-section__headline');
+		this.hideItem();
+		this.pageLoad();
 	}
+	//apply item is visible
 
-	_createClass(MobileMenu, [{
-		key: 'events',
-		value: function events() {
-			//bind fix the this. in toggle.. to point to toggle, not to site-header__menu
-			this.menuIcon.click(this.toggleTheMenu.bind(this));
-			console.log(this);
+
+	_createClass(FadeOut, [{
+		key: 'hideItem',
+		value: function hideItem() {
+			this.itemsToReveal.addClass('fade-out');
 		}
+
+		//what to do when..
+
 	}, {
-		key: 'toggleTheMenu',
-		value: function toggleTheMenu() {
-			this.menuContent.toggleClass('site-header__menu-content--is-visible');
-			this.siteHeader.toggleClass('site-header--is-expended');
-			this.menuIcon.toggleClass('site-header__menu-icon--close-x');
-			console.log(this);
+		key: 'pageLoad',
+		value: function pageLoad() {
+			this.itemsToReveal.addClass('fade-out--is-active');
 		}
 	}]);
 
-	return MobileMenu;
+	return FadeOut;
 }();
 
-exports.default = MobileMenu;
+exports.default = FadeOut;
 
 /***/ }),
 /* 2 */
@@ -10396,56 +10396,77 @@ var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _noframework = __webpack_require__(4);
+
+var _noframework2 = _interopRequireDefault(_noframework);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Modal = function () {
-	function Modal() {
-		_classCallCheck(this, Modal);
+var RevealOnScroll = function () {
 
-		this.openModalButton = (0, _jquery2.default)('.open-modal');
-		this.modal = (0, _jquery2.default)('.modal');
-		this.modalX = (0, _jquery2.default)('.modal__x');
-		this.event();
+	//target
+	function RevealOnScroll() {
+		_classCallCheck(this, RevealOnScroll);
+
+		this.itemsToReveal = (0, _jquery2.default)('.front-section__position');
+		this.navBar = (0, _jquery2.default)('.primary-nav');
+		this.hideItem();
+		this.createWaypoints();
 	}
 
-	_createClass(Modal, [{
-		key: 'event',
-		value: function event() {
-			//clicking the openModal button
-			this.openModalButton.click(this.openModal.bind(this));
-			//clicking the close modal button
-			this.modalX.click(this.closeModal.bind(this));
-			//clicking the esc key
-			(0, _jquery2.default)(document).keyup(this.KeyPressHendler.bind(this));
-			console.log(this);
+	//apply hiden even
+
+
+	_createClass(RevealOnScroll, [{
+		key: 'hideItem',
+		value: function hideItem() {
+			this.itemsToReveal.addClass('reveal-item');
+			this.navBar.addClass('fade-out__navbar');
+			//console.log(this);
 		}
+
+		//what to do when..
+
 	}, {
-		key: 'KeyPressHendler',
-		value: function KeyPressHendler(e) {
-			if (e.keyCode === 27) {
-				this.closeModal();
-			}
-		}
-	}, {
-		key: 'openModal',
-		value: function openModal() {
-			this.modal.addClass('modal--is-visible');
-			console.log(this);
-		}
-	}, {
-		key: 'closeModal',
-		value: function closeModal() {
-			this.modal.removeClass('modal--is-visible');
-			console.log(this);
+		key: 'createWaypoints',
+		value: function createWaypoints() {
+			this.itemsToReveal.each(function () {
+				//console.log(that);
+				var currentItem = this;
+				new Waypoint({
+					element: currentItem, //DOM element
+					handler: function handler() {
+						//what happen when scroll
+						(0, _jquery2.default)(currentItem).addClass('reveal-item--is-visiable');
+					},
+					offset: '90%'
+				});
+			});
+
+			this.navBar.each(function () {
+				var currentNavBar = this;
+				new Waypoint({
+					element: currentNavBar, //DOM element
+					handler: function handler(direction) {
+						//what happen when scroll
+						if (direction === 'down') {
+							(0, _jquery2.default)(currentNavBar).addClass('fade-out__navbar--is-active');
+						} else {
+							(0, _jquery2.default)(currentNavBar).removeClass('fade-out__navbar--is-active');
+						}
+					},
+					offset: '-40%'
+				});
+			});
 		}
 	}]);
 
-	return Modal;
+	return RevealOnScroll;
 }();
 
-exports.default = Modal;
+exports.default = RevealOnScroll;
 
 /***/ }),
 /* 3 */
@@ -10454,132 +10475,21 @@ exports.default = Modal;
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _noframework = __webpack_require__(5);
-
-var _noframework2 = _interopRequireDefault(_noframework);
-
-var _jquerySmoothScroll = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"jquery-smooth-scroll\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-var _jquerySmoothScroll2 = _interopRequireDefault(_jquerySmoothScroll);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var StickyHeader = function () {
-	function StickyHeader() {
-		_classCallCheck(this, StickyHeader);
-
-		this.siteHeader = (0, _jquery2.default)('.site-header');
-		this.headerTriggerElement = (0, _jquery2.default)('.main-section__title');
-		this.pageSection = (0, _jquery2.default)('.page-section');
-		this.headerLinks = (0, _jquery2.default)('.primary-nav a'); //target all the links in primary-nav
-		this.createHeaderWaypoint();
-		this.createPageSectionWaypoint();
-		this.smoothScrolling();
-	}
-
-	_createClass(StickyHeader, [{
-		key: 'smoothScrolling',
-		value: function smoothScrolling() {
-			this.headerLinks.smoothScroll();
-		}
-	}, {
-		key: 'createHeaderWaypoint',
-		value: function createHeaderWaypoint() {
-			var that = this;
-			new Waypoint({ //this doesnt pointed to our class stick.. from inside waypoints, that why we changing it to var that
-				element: this.headerTriggerElement[0], //native js
-				handler: function handler(direction) {
-					if (direction === 'down') {
-						that.siteHeader.addClass('site-header--dark');
-					} else {
-						that.siteHeader.removeClass('site-header--dark');
-					}
-				}
-			});
-		}
-	}, {
-		key: 'createPageSectionWaypoint',
-		value: function createPageSectionWaypoint() {
-			var that = this;
-			this.pageSection.each(function () {
-				var currentPageSection = this;
-				new Waypoint({
-					element: currentPageSection,
-					handler: function handler(direction) {
-						if (direction === 'down') {
-							var matchingHeaderLink = currentPageSection.getAttribute('data-matching-link');
-							that.headerLinks.removeClass();
-							(0, _jquery2.default)(matchingHeaderLink).addClass('is-current-link');
-						}
-					},
-					offset: '18%'
-				});
-
-				new Waypoint({
-					element: currentPageSection,
-					handler: function handler(direction) {
-						if (direction === 'up') {
-							var matchingHeaderLink = currentPageSection.getAttribute('data-matching-link');
-							that.headerLinks.removeClass();
-							(0, _jquery2.default)(matchingHeaderLink).addClass('is-current-link');
-						}
-					},
-					offset: '-10%'
-				});
-			});
-		}
-	}]);
-
-	return StickyHeader;
-}();
-
-exports.default = StickyHeader;
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _MobileMenu = __webpack_require__(1);
-
-var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
-
-var _RevealOnScroll = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./modules/RevealOnScroll\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _RevealOnScroll = __webpack_require__(2);
 
 var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
 
-var _StickyHeader = __webpack_require__(3);
+var _FadeOut = __webpack_require__(1);
 
-var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
-
-var _Modal = __webpack_require__(2);
-
-var _Modal2 = _interopRequireDefault(_Modal);
+var _FadeOut2 = _interopRequireDefault(_FadeOut);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var mobileMenu = new _MobileMenu2.default(); //MobileMenu its var of the path
-
 var revealOnScroll = new _RevealOnScroll2.default();
-var stickyHeader = new _StickyHeader2.default();
-var modal = new _Modal2.default();
+var fadeOut = new _FadeOut2.default();
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports) {
 
 /*!
